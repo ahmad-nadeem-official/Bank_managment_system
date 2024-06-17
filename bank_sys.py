@@ -22,7 +22,7 @@ def starter():
         elif st == 4:
             transfer()
         elif st == 5:
-            break
+            logfunc()
         else:
             print("Invalid option. Please try again.")
 
@@ -85,16 +85,20 @@ def transfer():
 
 def transaction_history():
     for i in history:
-        print(i)     
+        print(i)  
 
-if __name__ == "__main__":
-    print("LOGIN******SIGNUP")
+def logfunc():
     start1 = int(input("login or sign up 1/2: "))
     if start1 == 1:
         login()
     elif start1 == 2:
         signup()
     else:
-        print("Invalid option selected")
+        print("Invalid option selected")           
+
+if __name__ == "__main__":
+    print("LOGIN******SIGNUP")
+    logfunc()
+
 
 # The main issue in my code was the input from the user is always a string, but i am comparing it to integers in my starter function. i need to convert the input to an integer before making the comparisons. Additionally, there are some other issues in my code, such as the deposit and withdraw functions not updating dep_amount properly and the incorrect handling of withdraw and transfer.        
